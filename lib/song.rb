@@ -64,7 +64,7 @@ class Song
     new_name = song_split[1].delete_suffix(".mp3").strip
     
     new_song = self.create_by_name(new_name)
-    binding.pry 
+    new_song.artist_name = artist 
   end 
   
   def self.destroy_all
