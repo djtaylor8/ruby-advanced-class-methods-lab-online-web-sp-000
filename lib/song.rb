@@ -59,7 +59,10 @@ class Song
   end 
 
   def self.create_from_filename(name)
-    self.new_from_filename(name)
+    song_split = name.split("-")
+    new_name = song_split[1].delete_suffix(".mp3").strip
+    
+    self.create_by_name(new_name)
   end 
   
   def self.destroy_all
